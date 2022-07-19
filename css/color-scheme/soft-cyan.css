@@ -269,6 +269,10 @@ h2.post-title-small a:hover {
 	background: #4bd5ea;
 }
 
+.f-posts li h4 a:hover {
+	color: #4bd5ea;
+}
+
 .f-posts li h5 a:hover {
 	color: #4bd5ea;
 }

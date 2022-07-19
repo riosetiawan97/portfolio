@@ -118,7 +118,7 @@ ul, li {
 #header-main {
     padding: 0px;
     position: relative;
-    background-color: #FFF;
+    background-color: #282828;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -182,7 +182,7 @@ ul, li {
 
 .white-wrapper .testimonial h3,
 	#header-main .yamm-fw .dropdown-menu li a {
-	color: #262626 !important;
+	color: #fff !important;
 }
 
 #header-main .yamm-fw .dropdown-menu li a:before {
@@ -234,7 +234,7 @@ z-index: 999999;
 
 #header-main .navbar-nav > li > a:focus,
 #header-main .navbar-nav > li > a {
-	color: #262626;
+	color: #fff;
 	padding: 35px 18px 34px;
 	font-size: 14px;
 	overflow: hidden;
@@ -254,7 +254,7 @@ background:transparent !important;
 	position: relative;
 	padding: 15px 20px;
 	font-size: 12px;
-	color: #262626 !important;
+	color: #fff !important;
 	background: transparent !important;
 	font-weight:500;
 }
@@ -3478,7 +3478,7 @@ h2.title {
 footer h4 {
 	font-size: 15px;
 	text-transform: uppercase;
-	margin: 0px 0px 25px;
+	margin: 0px 0px 0px;
 	color: #fff;
 	position: relative;
 }
@@ -3491,7 +3491,7 @@ footer p {
 	/*background: transparent url("../images/map.png") no-repeat scroll left bottom / 55% auto;*/
 	background-position: 0 100%;
 	overflow: visible;
-	padding-bottom: 78px;
+	/* padding-bottom: 78px; */
 }
 
 .c-info li i {
@@ -3510,10 +3510,14 @@ footer p {
 	line-height: 23px;
 }
 
+.f-posts{
+	padding-top: 30px;
+}
+
 .f-posts li {
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 	padding-bottom: 17px;
-	border-bottom: 1px solid #383838;
+	/* border-bottom: 1px solid #383838; */
 }
 
 .f-posts li:last-child {
@@ -3530,6 +3534,14 @@ footer p {
 	margin: 0px 0px 5px 70px;
 	font-family: Open Sans;
 	font-size: 13px;
+}
+
+.f-posts li h4 a {
+	color: #fff;
+}
+
+.f-posts li h4 a:hover {
+	color: #8dc73f;
 }
 
 .f-posts li h5 a {
@@ -3958,6 +3970,10 @@ transition:.4s;
 #fs-content {
 	width: 68%;
 	float: right;
+}
+
+.fs-info{
+	padding-bottom: 30px;
 }
 
 .fs-info h3 {
