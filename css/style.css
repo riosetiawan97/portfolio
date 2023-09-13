@@ -241,7 +241,6 @@ z-index: 999999;
 	overflow: hidden;
 	position: relative;
 	z-index: 99999;
-	font-weight: 700;
 }
 
 #header-main .navbar-nav > li:hover > a ,
