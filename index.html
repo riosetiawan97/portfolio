@@ -1,344 +1,706 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="light" lang="en">
+
 <head>
-  
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rio Setiawan | Software Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a227f",
+                        "accent-teal": "#14b8a6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121320",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <script src="js/theme.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-	<title>Rio Setiawan</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="">
-
-	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,700,800' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lovers+Quarrel' rel='stylesheet' type='text/css'>
-
-	<!-- Icon Fonts -->
-	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
-
-	<script src="https://cdn.tailwindcss.com"></script>
-
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-           <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.2/jquery.xdomainrequest.min.js"></script>      
-	<![endif]-->
-
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(26, 34, 127, 0.1);
+        }
+    </style>
 </head>
-<body id="one-medical">
-<div id="page-top"></div>
 
-<div class="outer-wrapper">
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Top Navigation -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-primary p-1.5 rounded-lg">
+                            <span class="material-symbols-outlined text-white text-xl">terminal</span>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-primary dark:text-white">Rio
+                            Setiawan</span>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" data-i18n="nav_skills"
+                            href="#skills">Skills</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" data-i18n="nav_portfolio"
+                            href="#portfolio">Portfolio</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" data-i18n="nav_experience"
+                            href="#experience">Experience</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" data-i18n="nav_education"
+                            href="#education">Education</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="hidden md:flex items-center gap-2 bg-slate-200/50 dark:bg-slate-800/50 rounded-lg p-1">
+                            <button id="lang-id" onclick="setLanguage('id')"
+                                class="lang-btn px-2 py-1 text-xs rounded-md transition-all text-slate-400">ID</button>
+                            <button id="lang-en" onclick="setLanguage('en')"
+                                class="lang-btn px-2 py-1 text-xs rounded-md transition-all text-slate-400">EN</button>
+                        </div>
+                        <button onclick="toggleTheme()"
+                            class="flex items-center justify-center size-9 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                            <span class="material-symbols-outlined theme-icon text-lg">dark_mode</span>
+                        </button>
+                        <a href="CV Rio Setiawan.pdf" target="_blank" download data-i18n="btn_download_cv"
+                            class="hidden sm:flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                            Download CV
+                        </a>
+                        <div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-primary/20">
+                            <img class="h-full w-full object-contain bg-white"
+                                alt="Professional headshot of Rio Setiawan" src="images/Pas Foto 41.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="relative py-20 lg:py-32 overflow-hidden">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-10">
+                    <div class="absolute top-[-10%] right-[-10%] w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
+                    <div class="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-accent-teal rounded-full blur-[120px]">
+                    </div>
+                </div>
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                        <div class="w-full lg:w-1/2 space-y-8 text-center lg:text-left">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+                                <span class="relative flex h-2 w-2">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                                </span>
+                                Available for new projects
+                            </div>
+                            <h1
+                                class="text-5xl lg:text-7xl font-black tracking-tighter text-slate-900 dark:text-white leading-[1.1]">
+                                .Net <span class="text-primary">Programmer</span><br />&amp; PHP Enthusiast
+                            </h1>
+                            <p data-i18n="hero_desc"
+                                class="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                                I am a programmer with 5 years of experience in developing desktop-based applications. I
+                                also have the ability to develop website-based applications using .Net and PHP.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                                <a href="CV Rio Setiawan.pdf" target="_blank" download
+                                    class="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-bold text-white shadow-xl shadow-primary/30 hover:translate-y-[-2px] transition-all">
+                                    Download CV
+                                    <span class="material-symbols-outlined">download</span>
+                                </a>
+                                <a href="#portfolio"
+                                    class="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl border-2 border-slate-200 dark:border-slate-800 bg-transparent px-8 py-4 text-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                    View Projects
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                            <div class="relative group">
+                                <div
+                                    class="absolute -inset-4 bg-gradient-to-tr from-primary to-accent-teal rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity">
+                                </div>
+                                <div
+                                    class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl overflow-hidden border-8 border-white dark:border-slate-800 shadow-2xl bg-white">
+                                    <img class="w-full h-full object-contain grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
+                                        alt="Portrait of Rio Setiawan" src="images/Pas Foto 41.png" />
+                                </div>
+                                <div
+                                    class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl border border-primary/10 hidden sm:block">
+                                    <div class="flex items-center gap-4">
+                                        <div class="flex flex-col">
+                                            <span class="text-3xl font-black text-primary">5+</span>
+                                            <span
+                                                class="text-xs font-medium text-slate-500 uppercase tracking-widest">Years
+                                                Exp</span>
+                                        </div>
+                                        <div class="w-px h-10 bg-slate-200 dark:bg-slate-700"></div>
+                                        <div class="flex flex-col">
+                                            <span class="text-3xl font-black text-accent-teal">8</span>
+                                            <span
+                                                class="text-xs font-medium text-slate-500 uppercase tracking-widest">Key
+                                                Skills</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Skills Section -->
+            <section class="py-24 bg-white dark:bg-background-dark/50" id="skills">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 space-y-4">
+                        <h2 class="text-3xl lg:text-4xl font-black tracking-tight" data-i18n="skills_title">Skills &amp;
+                            Tech Stack</h2>
+                        <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+                        <p class="text-slate-500 max-w-2xl mx-auto" data-i18n="skills_desc">A comprehensive toolkit
+                            built through years of
+                            software development.</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <!-- Skill Item 1 -->
+                        <div
+                            class="group flex flex-col p-6 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-lg items-center text-center">
+                            <div class="mb-4 text-primary group-hover:scale-110 transition-transform">
+                                <img src="images/technology/codeigniter.png" class="h-12 w-auto" alt="Codeigniter" />
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">Codeigniter</h3>
+                            <p class="text-sm text-slate-500" data-i18n="skills_exp_less_1">
+                                < 1 Year Exp.</p>
+                        </div>
+                        <!-- Skill Item 2 -->
+                        <div
+                            class="group flex flex-col p-6 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-lg items-center text-center">
+                            <div class="mb-4 text-primary group-hover:scale-110 transition-transform">
+                                <img src="images/technology/laravel.png" class="h-12 w-auto" alt="Laravel" />
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">Laravel</h3>
+                            <p class="text-sm text-slate-500" data-i18n="skills_exp_6_mo">6 Months Exp.</p>
+                        </div>
+                        <!-- Skill Item 3 -->
+                        <div
+                            class="group flex flex-col p-6 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-lg items-center text-center">
+                            <div class="mb-4 text-primary group-hover:scale-110 transition-transform">
+                                <img src="images/technology/react.webp" class="h-12 w-auto" alt="React JS" />
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">React JS</h3>
+                            <p class="text-sm text-slate-500" data-i18n="skills_exp_3_mo">3 Months Exp.</p>
+                        </div>
+                        <!-- Skill Item 4 -->
+                        <div
+                            class="group flex flex-col p-6 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-lg items-center text-center">
+                            <div class="mb-4 text-primary group-hover:scale-110 transition-transform">
+                                <img src="images/technology/magic.png" class="h-12 w-auto" alt="Magic" />
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">Magic</h3>
+                            <p class="text-sm text-slate-500" data-i18n="skills_exp_3_yr">3 Years Exp.</p>
+                        </div>
+                        <!-- Skill Item 5 -->
+                        <div
+                            class="group flex flex-col p-6 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-lg items-center text-center">
+                            <div class="mb-4 text-primary group-hover:scale-110 transition-transform">
+                                <img src="images/technology/microsoftsqlserver.png" class="h-12 w-auto"
+                                    alt="SQL Server" />
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">SQL Server</h3>
+                            <p class="text-sm text-slate-500" data-i18n="skills_exp_5_yr">5 Years Exp.</p>
+                        </div>
+                        <!-- Skill Item 6 -->
+                        <div
+                            class="group flex flex-col p-6 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-lg items-center text-center">
+                            <div class="mb-4 text-primary group-hover:scale-110 transition-transform">
+                                <img src="images/technology/mysql.png" class="h-12 w-auto" alt="MySQL" />
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">MySQL</h3>
+                            <p class="text-sm text-slate-500" data-i18n="skills_exp_1_yr">1 Year Exp.</p>
+                        </div>
+                        <!-- Skill Item 7 -->
+                        <div
+                            class="group flex flex-col p-6 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-lg items-center text-center">
+                            <div class="mb-4 text-primary group-hover:scale-110 transition-transform">
+                                <img src="images/technology/oracle.png" class="h-12 w-auto" alt="Oracle" />
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">Oracle</h3>
+                            <p class="text-sm text-slate-500" data-i18n="skills_exp_6_mo">6 Months Exp.</p>
+                        </div>
+                        <!-- Skill Item 8 -->
+                        <div
+                            class="group flex flex-col p-6 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-all hover:shadow-lg items-center text-center">
+                            <div class="mb-4 text-primary group-hover:scale-110 transition-transform">
+                                <img src="images/technology/net.png" class="h-12 w-auto" alt=".Net" />
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">.Net</h3>
+                            <p class="text-sm text-slate-500" data-i18n="skills_exp_2_yr">2 Years Exp.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Portfolio Section -->
+            <section class="py-24 bg-background-light dark:bg-background-dark" id="portfolio">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                        <div class="space-y-4">
+                            <h2 class="text-3xl lg:text-4xl font-black tracking-tight" data-i18n="portfolio_title">
+                                Featured Projects</h2>
+                            <div class="h-1.5 w-20 bg-accent-teal rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <div
+                            class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 transition-all hover:shadow-xl hover:-translate-y-1">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    alt="Website Berita Sepakbola" src="images/portfolio1/home.png" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                    <a href="portfolio1.html"
+                                        class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-100">
+                                        <span data-i18n="btn_view_case_study">View Case Study</span> <span
+                                            class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 rounded">PHP</span>
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 rounded">MySQL</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2" data-i18n="port1_title">Website Berita Sepakbola</h3>
+                                <p class="text-slate-500 text-sm line-clamp-2" data-i18n="port1_desc">A high-performance
+                                    news portal dedicated
+                                    to football updates with a custom CMS and real-time score integration.</p>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div
+                            class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 transition-all hover:shadow-xl hover:-translate-y-1">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    alt="Website Profile Sekolah SMK Al Hadiriyah" src="images/portfolio2/home.png" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                    <a href="portfolio2.html"
+                                        class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-100">
+                                        <span data-i18n="btn_view_case_study">View Case Study</span> <span
+                                            class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 rounded">Codeigniter</span>
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 rounded">MySQL</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2" data-i18n="port2_title">Website Profile SMK Al
+                                    Hadiriyah</h3>
+                                <p class="text-slate-500 text-sm line-clamp-2" data-i18n="port2_desc">Comprehensive
+                                    school profile platform
+                                    with student information system and interactive event calendars.</p>
+                            </div>
+                        </div>
+                        <!-- Project 3 -->
+                        <div
+                            class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 transition-all hover:shadow-xl hover:-translate-y-1">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    alt="Website Absensi Kelas" src="images/portfolio3/home.png" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                    <a href="portfolio3.html"
+                                        class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-100">
+                                        <span data-i18n="btn_view_case_study">View Case Study</span> <span
+                                            class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 rounded">Laravel</span>
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 rounded">MySQL</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2" data-i18n="port3_title">Website Absensi Kelas</h3>
+                                <p class="text-slate-500 text-sm line-clamp-2" data-i18n="port3_desc">Efficient
+                                    attendance management system
+                                    featuring QR code scanning and automatic reporting for educational institutions.</p>
+                            </div>
+                        </div>
+                        <!-- Project 4 -->
+                        <div
+                            class="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 transition-all hover:shadow-xl hover:-translate-y-1">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    alt="Website Profile Sekolah SMP Alhadiriyah" src="images/portfolio1/home.png" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                                    <a href="portfolio4.html"
+                                        class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-slate-100">
+                                        <span data-i18n="btn_view_case_study">View Case Study</span> <span
+                                            class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 rounded">PHP</span>
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 rounded">MySQL</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2" data-i18n="port4_title">Website Profile SMP
+                                    Alhadiriyah</h3>
+                                <p class="text-slate-500 text-sm line-clamp-2" data-i18n="port4_desc">School profile
+                                    platform created with
+                                    native PHP focusing on reliable information delivery to public and parents.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Experience Section -->
+            <section class="py-24 bg-white dark:bg-background-dark/50" id="experience">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 space-y-4">
+                        <h2 class="text-3xl lg:text-4xl font-black tracking-tight" data-i18n="exp_title">Professional
+                            Experience</h2>
+                        <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+                    </div>
+                    <div class="space-y-12">
+                        <!-- Experience Item 1 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:flex gap-12">
+                                <div class="md:w-1/4 mb-4 md:mb-0 md:text-right">
+                                    <span class="text-primary font-bold">Jan 2025 - Feb 2026</span>
+                                </div>
+                                <div
+                                    class="hidden md:block absolute left-1/4 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 -translate-x-1/2 mt-2">
+                                </div>
+                                <div
+                                    class="hidden md:block absolute left-1/4 top-0 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900 -translate-x-1/2 mt-1 z-10">
+                                </div>
+                                <div class="md:w-3/4 pb-12 border-b border-slate-100 dark:border-slate-800">
+                                    <h3 class="text-xl font-bold" data-i18n="exp1_role">Business Application Developer
+                                    </h3>
+                                    <p class="text-accent-teal font-medium mb-4">PT. Indopoly Swakarsa Industry</p>
+                                    <ul
+                                        class="text-slate-600 dark:text-slate-400 leading-relaxed list-disc list-outside ml-4 space-y-2">
+                                        <li data-i18n="exp1_task1">Perform maintenance on the ERP application at the
+                                            Business of PT Indopoly
+                                            Swakarsa Industry.</li>
+                                        <li data-i18n="exp1_task2">Create program documentation.</li>
+                                        <li data-i18n="exp1_task3">Make application changes according to user requests.
+                                        </li>
+                                        <li data-i18n="exp1_task4">Perform System Integration Testing and User
+                                            Acceptance Test.</li>
+                                        <li data-i18n="exp1_task5">Support Go-Live.</li>
+                                        <li data-i18n="exp1_task6">Perform Operational Support for ERP applications.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Item 2 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:flex gap-12">
+                                <div class="md:w-1/4 mb-4 md:mb-0 md:text-right">
+                                    <span class="text-slate-400 font-bold">Jan 2024 - Jan 2025</span>
+                                </div>
+                                <div
+                                    class="hidden md:block absolute left-1/4 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 -translate-x-1/2 mt-2">
+                                </div>
+                                <div
+                                    class="hidden md:block absolute left-1/4 top-0 w-4 h-4 rounded-full bg-slate-200 dark:bg-slate-800 border-4 border-white dark:border-slate-900 -translate-x-1/2 mt-1 z-10">
+                                </div>
+                                <div class="md:w-3/4 pb-12 border-b border-slate-100 dark:border-slate-800">
+                                    <h3 class="text-xl font-bold" data-i18n="exp2_role">Software Engineer</h3>
+                                    <p class="text-accent-teal font-medium mb-4">PT. Kamoro Maxima Integra</p>
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4"
+                                        data-i18n="exp2_desc">
+                                        At PT. Kamoro Maxima Integra I was placed at the client company PT. Tower
+                                        Bersama Group.
+                                    </p>
+                                    <div
+                                        class="bg-primary/5 dark:bg-slate-800/50 p-4 rounded-xl border border-primary/10 mb-4">
+                                        <h4 class="font-bold text-slate-900 dark:text-slate-100">PT. Tower Bersama Group
+                                            <span class="text-sm font-normal text-slate-500">(Jan 2024 - Jan
+                                                2025)</span>
+                                        </h4>
+                                        <p class="text-sm font-semibold text-primary mb-2" data-i18n="exp2_sub_role">
+                                            Software Engineer</p>
+                                        <ul
+                                            class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed list-disc list-outside ml-4 space-y-1">
+                                            <li data-i18n="exp2_task1">Developed Web-based applications using .Net Core,
+                                                ASP.Net and .Net MVC,
+                                                SQL Server database.</li>
+                                            <li data-i18n="exp2_task2">Coordinate with Product Manager, related to the
+                                                application that will be
+                                                developed.</li>
+                                            <li data-i18n="exp2_task3">Perform System Integration Testing, User
+                                                Acceptance Test and Support
+                                                Go-Live.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Item 3 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:flex gap-12">
+                                <div class="md:w-1/4 mb-4 md:mb-0 md:text-right">
+                                    <span class="text-slate-400 font-bold">Oct 2022 - Jan 2024</span>
+                                </div>
+                                <div
+                                    class="hidden md:block absolute left-1/4 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-800 -translate-x-1/2 mt-2">
+                                </div>
+                                <div
+                                    class="hidden md:block absolute left-1/4 top-0 w-4 h-4 rounded-full bg-slate-200 dark:bg-slate-800 border-4 border-white dark:border-slate-900 -translate-x-1/2 mt-1 z-10">
+                                </div>
+                                <div class="md:w-3/4 pb-12 border-b border-slate-100 dark:border-slate-800">
+                                    <h3 class="text-xl font-bold" data-i18n="exp3_role">.Net Developer</h3>
+                                    <p class="text-accent-teal font-medium mb-4">PT. Infinite Creative Teknologi</p>
+                                    <ul
+                                        class="text-slate-600 dark:text-slate-400 leading-relaxed list-disc list-outside ml-4 space-y-2">
+                                        <li data-i18n="exp3_task1">Developed Web-based applications using .Net Core,
+                                            ASP.Net and .Net MVC, SQL
+                                            Server database.</li>
+                                        <li data-i18n="exp3_task2">Coordinate with System Analyst, related to the
+                                            application that will be
+                                            developed.</li>
+                                        <li data-i18n="exp3_task3">Perform System Integration Testing with the Quality
+                                            Control Team.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Item 4 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:flex gap-12">
+                                <div class="md:w-1/4 mb-4 md:mb-0 md:text-right">
+                                    <span class="text-slate-400 font-bold">Apr 2019 - Okt 2022</span>
+                                </div>
+                                <div
+                                    class="hidden md:block absolute left-1/4 top-0 w-4 h-4 rounded-full bg-slate-200 dark:bg-slate-800 border-4 border-white dark:border-slate-900 -translate-x-1/2 mt-1 z-10">
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h3 class="text-xl font-bold" data-i18n="exp4_role">Magic Developer</h3>
+                                    <p class="text-accent-teal font-medium mb-4">PT. Indocyber Global Teknologi</p>
+                                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4"
+                                        data-i18n="exp4_desc">
+                                        At PT Indocyber Global Teknologi, I developed mobile and desktop-based
+                                        recruitment applications for use in internal companies using Magic XPA 3.3 and
+                                        MySQL database. At PT Indocyber Global Teknologi I was also placed in several
+                                        client companies as follows:
+                                    </p>
 
-	<!-- HEADER -->
-	<header class="bg-gray-800 text-white p-4 sticky top-0 z-50">
-		<div class="container mx-auto flex justify-between items-center">
-			<h1 class="text-xl font-bold">Rio Setiawan</h1>
-			<nav class="hidden md:flex space-x-4">
-				<a href="#page-top" class="hover:text-gray-400">Home</a>
-				<a href="#1" class="hover:text-gray-400">Skill</a>
-				<a href="#2" class="hover:text-gray-400">Portfolio</a>
-				<a href="#3" class="hover:text-gray-400">Experience</a>
-				<a href="#4" class="hover:text-gray-400">Education</a>
-			</nav>
-			<button class="md:hidden" id="mobile-menu-button">
-				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-				</svg>
-			</button>
-		</div>
-		<div id="mobile-menu" class="hidden md:hidden">
-			<a href="#page-top" class="block p-2 hover:bg-gray-700">Home</a>
-			<a href="#1" class="block p-2 hover:bg-gray-700">Skill</a>
-			<a href="#2" class="block p-2 hover:bg-gray-700">Portfolio</a>
-			<a href="#3" class="block p-2 hover:bg-gray-700">Experience</a>
-			<a href="#4" class="block p-2 hover:bg-gray-700">Education</a>
-		</div>
-	</header>
-	<div class="bg-blue-100 py-16" id="page-top">
-		<div class="container mx-auto flex flex-col md:flex-row items-center">
-			<div class="md:w-1/3 text-center mb-8 md:mb-0">
-				<img src="images/Pas Foto 41.png" class="rounded-full w-48 h-48 mx-auto" alt="Rio Setiawan">
-			</div>
-			<div class="md:w-2/3 md:pl-8">
-				<h1 class="text-4xl font-bold">Rio Setiawan</h1>
-				<h2 class="text-xl text-gray-600 mb-4">.Net Programmer, PHP Enthusiast</h2>
-				<p class="text-gray-700 mb-6">I am a programmer with 5 years of experience in developing desktop-based applications. I also have the ability to develop website-based applications using .Net and PHP.</p>
-				<a target="_blank" href="CV Rio Setiawan.pdf" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600" download>Download CV</a>
-			</div>
-		</div>
-	</div>
+                                    <div class="space-y-4">
+                                        <div
+                                            class="bg-primary/5 dark:bg-slate-800/50 p-4 rounded-xl border border-primary/10">
+                                            <h4 class="font-bold text-slate-900 dark:text-slate-100">PT. Astra Credit
+                                                Company <span class="text-sm font-normal text-slate-500">(Aug 2019 - Feb
+                                                    2020)</span></h4>
+                                            <p class="text-sm font-semibold text-primary mb-2"
+                                                data-i18n="exp4_sub1_role">Magic Developer</p>
+                                            <ul
+                                                class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed list-disc list-outside ml-4 space-y-1">
+                                                <li data-i18n="exp4_sub1_task1">Developed a desktop-based customer data
+                                                    input application using
+                                                    Magic Unipass and Oracle database.</li>
+                                                <li data-i18n="exp4_sub1_task2">Conduct application testing with the
+                                                    Quality Control team.</li>
+                                                <li data-i18n="exp4_sub1_task3">Discuss with System Analyst team
+                                                    regarding application development.
+                                                </li>
+                                            </ul>
+                                        </div>
 
-	<div class="py-16" id="1">
-		<div class="container mx-auto">
-			<h2 class="text-3xl font-bold text-center mb-2">Skills and Abilities</h2>
-			<p class="text-center text-gray-600 mb-8">I have several special skills in the field of programming. The following are the technologies that I have mastered so far :</p>
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-				<div class="bg-white p-6 rounded-lg shadow-md text-center">
-					<img src="images/technology/codeigniter.png" class="h-16 mx-auto mb-4" alt="Codeigniter">
-					<h3 class="text-xl font-bold mb-2">Codeigniter</h3>
-					<p class="text-gray-600">Experience Using Codeigniter for less than 1 year.</p>
-				</div>
-				<div class="bg-white p-6 rounded-lg shadow-md text-center">
-					<img src="images/technology/laravel.png" class="h-16 mx-auto mb-4" alt="Laravel">
-					<h3 class="text-xl font-bold mb-2">Laravel</h3>
-					<p class="text-gray-600">Experience Using the Laravel framework for 6 months.</p>
-				</div>
-				<div class="bg-white p-6 rounded-lg shadow-md text-center">
-					<img src="images/technology/react.webp" class="h-16 mx-auto mb-4" alt="React JS">
-					<h3 class="text-xl font-bold mb-2">React JS</h3>
-					<p class="text-gray-600">Experience Using the React JS for 3 months.</p>
-				</div>
-				<div class="bg-white p-6 rounded-lg shadow-md text-center">
-					<img src="images/technology/magic.png" class="h-16 mx-auto mb-4" alt="Magic">
-					<h3 class="text-xl font-bold mb-2">Magic</h3>
-					<p class="text-gray-600">Experience Using Magic 8 to Magic XPA 3.3 for 3 years.</p>
-				</div>
-				<div class="bg-white p-6 rounded-lg shadow-md text-center">
-					<img src="images/technology/microsoftsqlserver.png" class="h-16 mx-auto mb-4" alt="SQL Server">
-					<h3 class="text-xl font-bold mb-2">SQL Server</h3>
-					<p class="text-gray-600">Experience Using SQL Server Database for 5 years.</p>
-				</div>
-				<div class="bg-white p-6 rounded-lg shadow-md text-center">
-					<img src="images/technology/mysql.png" class="h-16 mx-auto mb-4" alt="My Sql">
-					<h3 class="text-xl font-bold mb-2">My Sql</h3>
-					<p class="text-gray-600">Experience Using My Sql Database for 1 year.</p>
-				</div>
-				<div class="bg-white p-6 rounded-lg shadow-md text-center">
-					<img src="images/technology/oracle.png" class="h-16 mx-auto mb-4" alt="Oracle">
-					<h3 class="text-xl font-bold mb-2">Oracle</h3>
-					<p class="text-gray-600">Experience Using Oracle Database for 6 months.</p>
-				</div>
-				<div class="bg-white p-6 rounded-lg shadow-md text-center">
-					<img src="images/technology/net.png" class="h-16 mx-auto mb-4" alt=".Net">
-					<h3 class="text-xl font-bold mb-2">.Net</h3>
-					<p class="text-gray-600">Experience using the .Net Framework for 2 years.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="bg-gray-100 py-16" id="2">
-		<div class="container mx-auto">
-			<h2 class="text-3xl font-bold text-center mb-8">Portfolio</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="bg-white rounded-lg shadow-md overflow-hidden">
-					<a href="./portfolio1.html">
-						<img src="images/portfolio1/home.png" class="w-full h-48 object-cover" alt="Website Berita Sepakbola">
-						<div class="p-6">
-							<h3 class="text-xl font-bold mb-2">Website Berita Sepakbola</h3>
-							<p class="text-gray-600">PHP , MySql</p>
-						</div>
-					</a>
-				</div>
-				<div class="bg-white rounded-lg shadow-md overflow-hidden">
-					<a href="./portfolio2.html">
-						<img src="images/portfolio2/home.png" class="w-full h-48 object-cover" alt="Website Profil Sekolah SMK Al Hadiriyah">
-						<div class="p-6">
-							<h3 class="text-xl font-bold mb-2">Website Profile Sekolah SMK Al Hadiriyah</h3>
-							<p class="text-gray-600">PHP (Codeigniter), MySql</p>
-						</div>
-					</a>
-				</div>
-				<div class="bg-white rounded-lg shadow-md overflow-hidden">
-					<a href="./portfolio3.html">
-						<img src="images/portfolio3/home.png" class="w-full h-48 object-cover" alt="Website Absensi Kelas">
-						<div class="p-6">
-							<h3 class="text-xl font-bold mb-2">Website Absensi Kelas</h3>
-							<p class="text-gray-600">PHP (Laravel), MySql</p>
-						</div>
-					</a>
-				</div>
-				<div class="bg-white rounded-lg shadow-md overflow-hidden">
-					<a href="./portfolio4.html">
-						<img src="images/portfolio1/home.png" class="w-full h-48 object-cover" alt="Website Profile Sekolah SMP Alhadiriyah">
-						<div class="p-6">
-							<h3 class="text-xl font-bold mb-2">Website Profile Sekolah SMP Alhadiriyah</h3>
-							<p class="text-gray-600">PHP, MySql</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="py-16" id="3">
-		<div class="container mx-auto">
-			<h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
-			<div class="relative">
-				<div class="border-l-2 border-gray-400 absolute h-full left-4"></div>
-				<div class="mb-8 pl-8">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<h3 class="text-xl font-bold">PT. Indocyber Global Teknologi</h3>
-						<p class="text-gray-600 mb-2">Magic Developer (April 2019 - October 2022)</p>
-						<p>At PT Indocyber Global Teknologi, I developed mobile and desktop-based recruitment applications for use in internal companies using Magic XPA 3.3 and MySql database. I was also placed in several client companies.</p>
-					</div>
-				</div>
-				<div class="mb-8 pl-8">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<h3 class="text-xl font-bold">PT. Infinite Creative Teknologi</h3>
-						<p class="text-gray-600 mb-2">.Net Developer (October 2022 - January 2024)</p>
-						<p>Developed Web-based applications using .Net Core, ASP.Net and .Net MVC, SQL Server database. Coordinated with System Analyst and performed System Integration Testing.</p>
-					</div>
-				</div>
-				<div class="pl-8">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<h3 class="text-xl font-bold">PT. Kamoro Maxima Integra</h3>
-						<p class="text-gray-600 mb-2">Software Engineer (January 2024 - Present)</p>
-						<p>Placed at PT. Tower Bersama Group. Developed Web-based applications using .Net Core, ASP.Net and .Net MVC, SQL Server database. Coordinated with Product Manager and performed SIT, UAT and Support Go-Live.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="bg-gray-100 py-16" id="4">
-		<div class="container mx-auto">
-			<h2 class="text-3xl font-bold text-center mb-8">Education</h2>
-			<div class="relative">
-				<div class="border-l-2 border-gray-400 absolute h-full left-4"></div>
-				<div class="mb-8 pl-8">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<h3 class="text-xl font-bold">SMK Jakarta 1</h3>
-						<p class="text-gray-600 mb-2">Software Engineering (2012 - 2015)</p>
-						<p>Learned the basics of programming languages, such as: PHP and C, and also learned SQL Queries.</p>
-					</div>
-				</div>
-				<div class="mb-8 pl-8">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<h3 class="text-xl font-bold">Gunadarma University</h3>
-						<p class="text-gray-600 mb-2">D3 - Informatics Management (2015 - 2018)</p>
-						<p>Studied various kinds of knowledge in the world of IT, especially programming, including PHP, C, C++ and Java. GPA: 3.71.</p>
-					</div>
-				</div>
-				<div class="pl-8">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<h3 class="text-xl font-bold">Bina Nusantara University</h3>
-						<p class="text-gray-600 mb-2">S1 - Computer Science (2021 - 2023)</p>
-						<p>Participated in the Online Learning program for flexible study times.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- FOOTER -->
-	<footer class="bg-gray-800 text-white py-8">
-		<div class="container mx-auto text-center">
-			<h3 class="text-2xl font-bold mb-4">Contact</h3>
-			<p class="mb-2">Jalan Padat Karya No. 77, Pondok Kelapa, Jakarta Timur, Jakarta, Indonesia 13450</p>
-			<p class="mb-2">085891217032 | riosetiawan1997@gmail.com</p>
-			<div class="flex justify-center space-x-4 mt-4">
-				<a href="https://www.facebook.com/riosetiawan97" class="hover:text-gray-400"><i class="fa fa-facebook"></i></a>
-				<a href="https://www.instagram.com/riosetiawan97/" class="hover:text-gray-400"><i class="fa fa-instagram"></i></a>
-				<a href="https://github.com/riosetiawan97" class="hover:text-gray-400"><i class="fa fa-github"></i></a>
-			</div>
-		</div>
-	</footer>
-	<div class="bg-gray-900 text-white text-center py-2">
-		<p>&copy; 2024 Rio Setiawan. All rights reserved.</p>
-	</div>
-</div>
-
-<!-- STYLE SWITCHER 
-============================================= -->
-<!--
-<div class="b-settings-panel">
-	<div class="settings-section">
-		<span>
-		Boxed 
-		</span>
-		<div class="b-switch">
-			<div class="switch-handle"></div>
-		</div>
-		<span>
-		Wide 
-		</span>
-	</div>
-	<hr class="dashed" style="margin: 15px 0px;">
-	<h5>Main Background</h5>
-	<div class="settings-section bg-list">
-		<div class="bg-pattern1"></div>
-		<div class="bg-pattern2"></div>
-		<div class="bg-pattern6"></div>
-		<div class="bg-pattern10"></div>
-		<div class="bg-pattern16"></div>
-		<div class="bg-pattern4"></div>
-		<div class="bg-pattern5"></div>
-		<div class="bg-pattern7"></div>
-		<div class="bg-pattern9"></div>
-		<div class="bg-pattern11"></div>
-		<div class="bg-pattern12"></div>
-		<div class="bg-pattern13"></div>
-		<div class="bg-pattern17"></div>
-		<div class="bg-pattern8"></div>
-		<div class="bg-pattern14"></div>
-		<div class="bg-pattern15"></div>
-		<div class="bg-pattern3"></div>
-		<div class="bg-pattern18"></div>
-	</div>
-	<hr class="dashed" style="margin: 15px 0px;">
-	<h5>Color Scheme</h5>
-	<div class="settings-section color-list">
-		<div data-src="css/color-scheme/moderate-green.css" style="background: #8ec249"></div>
-		<div data-src="css/color-scheme/vivid-blue.css" style="background: #228dff"></div>
-		<div data-src="css/color-scheme/orange.css" style="background: #fa6900"></div>
-		<div data-src="css/color-scheme/brown.css" style="background: #a68c69"></div>
-		<div data-src="css/color-scheme/yellow.css" style="background: #fabe28"></div>
-		<div data-src="css/color-scheme/violet.css" style="background: #ba01ff"></div>
-		<div data-src="css/color-scheme/strong-cyan.css" style="background: #00b9bd"></div>
-		<div data-src="css/color-scheme/soft-cyan.css" style="background: #4bd5ea"></div>
-		<div data-src="css/color-scheme/red.css" style="background: #ff0104"></div>
-		<div data-src="css/color-scheme/lite-brown.css" style="background: #f3a76d"></div>
-		<div data-src="css/color-scheme/lime-green.css" style="background: #3bdbad"></div>
-		<div data-src="css/color-scheme/light-voilet.css" style="background: #aaa5ff"></div>
-		<div data-src="css/color-scheme/gray-green.css" style="background: #697060"></div>
-		<div data-src="css/color-scheme/gray-cyan.css" style="background: #aeced2"></div>
-		<div data-src="css/color-scheme/de-green.css" style="background: #b6cd71"></div>
-		<div data-src="css/color-scheme/cream.css" style="background: #e0d6b2"></div>
-
-	</div>
-	<div class="btn-settings"></div>
-</div>
--->
-<!-- END STYLE SWITCHER 
-============================================= -->
-
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Plugins -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl-carousel/owl.carousel.min.js"></script>
-<script src="js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script src="js/isotope/isotope.pkgd.js"></script>
-<script src="js/jflickrfeed.min.js"></script>
-<script src="js/tweecool.js"></script>
-<script src="js/flexslider/jquery.flexslider.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/jquery.appear.js"></script>
-<script src="js/jquery.countdown.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-<script src="js/main.js"></script>
-
-<script>
-	document.getElementById('mobile-menu-button').addEventListener('click', function() {
-		document.getElementById('mobile-menu').classList.toggle('hidden');
-	});
-</script>
+                                        <div
+                                            class="bg-primary/5 dark:bg-slate-800/50 p-4 rounded-xl border border-primary/10">
+                                            <h4 class="font-bold text-slate-900 dark:text-slate-100">PT. Astra Otoparts
+                                                <span class="text-sm font-normal text-slate-500">(Mar 2020 - Apr
+                                                    2022)</span>
+                                            </h4>
+                                            <p class="text-sm font-semibold text-primary mb-2"
+                                                data-i18n="exp4_sub2_role">Magic Developer</p>
+                                            <ul
+                                                class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed list-disc list-outside ml-4 space-y-1">
+                                                <li data-i18n="exp4_sub2_task1">Perform maintenance on the ERP
+                                                    application at the Business Unit of
+                                                    PT Astra Otoparts.</li>
+                                                <li data-i18n="exp4_sub2_task2">Create program documentation.</li>
+                                                <li data-i18n="exp4_sub2_task3">Make application changes according to
+                                                    user requests.</li>
+                                                <li data-i18n="exp4_sub2_task4">Perform System Integration Testing and
+                                                    User Acceptance Test.</li>
+                                                <li data-i18n="exp4_sub2_task5">Support Go-Live.</li>
+                                                <li data-i18n="exp4_sub2_task6">Perform Operational Support for ERP
+                                                    applications.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Education Section -->
+            <section class="py-24 bg-background-light dark:bg-background-dark" id="education">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16 space-y-4">
+                        <h2 class="text-3xl lg:text-4xl font-black tracking-tight" data-i18n="edu_title">Education</h2>
+                        <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div
+                            class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-4xl">school</span>
+                            </div>
+                            <h3 class="text-lg font-bold">Bina Nusantara University</h3>
+                            <p class="text-accent-teal font-medium text-sm mb-4" data-i18n="edu1_degree">S1 - Computer
+                                Science</p>
+                            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">2021 - 2023</p>
+                            <p class="text-sm text-slate-500" data-i18n="edu1_desc">Participated in the Online Learning
+                                program for flexible
+                                study times.</p>
+                        </div>
+                        <div
+                            class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-4xl">history_edu</span>
+                            </div>
+                            <h3 class="text-lg font-bold">Gunadarma University</h3>
+                            <p class="text-accent-teal font-medium text-sm mb-4" data-i18n="edu2_degree">D3 -
+                                Informatics Management</p>
+                            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">2015 - 2018</p>
+                            <p class="text-sm text-slate-500" data-i18n="edu2_desc">Studied various kinds of knowledge
+                                in the world of IT,
+                                especially programming. GPA: 3.71.</p>
+                        </div>
+                        <div
+                            class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center text-center group hover:border-primary/50 transition-all">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-4xl">workspace_premium</span>
+                            </div>
+                            <h3 class="text-lg font-bold">SMK Jakarta 1</h3>
+                            <p class="text-accent-teal font-medium text-sm mb-4" data-i18n="edu3_degree">Software
+                                Engineering</p>
+                            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">2012 - 2015</p>
+                            <p class="text-sm text-slate-500" data-i18n="edu3_desc">Learned the basics of programming
+                                languages, such as: PHP
+                                and C, and also learned SQL Queries.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer Section -->
+        <footer class="bg-slate-900 text-white pt-20 pb-10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-12 mb-16">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-2">
+                            <div class="bg-primary p-1.5 rounded-lg">
+                                <span class="material-symbols-outlined text-white text-xl">terminal</span>
+                            </div>
+                            <span class="text-2xl font-black tracking-tight">Rio Setiawan</span>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="footer_desc">
+                            Crafting innovative digital solutions with passion and precision. Let's build something
+                            amazing together.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                                href="https://www.facebook.com/riosetiawan97" target="_blank">
+                                <i class="fa fa-facebook text-xl text-white"></i>
+                            </a>
+                            <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                                href="https://www.instagram.com/riosetiawan97/" target="_blank">
+                                <i class="fa fa-instagram text-xl text-white"></i>
+                            </a>
+                            <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                                href="https://github.com/riosetiawan97" target="_blank">
+                                <i class="fa fa-github text-xl text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <h4 class="text-lg font-bold" data-i18n="footer_contact">Contact Info</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-400">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                                <span>Jalan Padat Karya No. 77, Pondok Kelapa, Jakarta Timur, Jakarta, Indonesia
+                                    13450</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-400">
+                                <span class="material-symbols-outlined text-primary">call</span>
+                                <span>085891217032</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-400">
+                                <span class="material-symbols-outlined text-primary">mail</span>
+                                <span>riosetiawan1997@gmail.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6">
+                        <h4 class="text-lg font-bold" data-i18n="footer_links">Quick Links</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a class="text-slate-400 hover:text-white transition-colors" data-i18n="nav_skills"
+                                href="#skills">Skills</a>
+                            <a class="text-slate-400 hover:text-white transition-colors" data-i18n="nav_portfolio"
+                                href="#portfolio">Portfolio</a>
+                            <a class="text-slate-400 hover:text-white transition-colors" data-i18n="nav_experience"
+                                href="#experience">Experience</a>
+                            <a class="text-slate-400 hover:text-white transition-colors" data-i18n="nav_education"
+                                href="#education">Education</a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm">
+                    <p data-i18n="footer_copyright">© 2024 Rio Setiawan. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/lang.js"></script>
 </body>
+
 </html>
-
-
-
-
-

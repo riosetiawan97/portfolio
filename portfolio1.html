@@ -1,39 +1,380 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Detail - Website Berita Sepakbola</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1a227f",
+            "background-light": "#f6f6f8",
+            "background-dark": "#121320",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <script src="js/theme.js"></script>
+  <title>Project Detail - Website Berita Sepakbola</title>
 </head>
-<body class="bg-gray-100">
 
-  <header class="bg-gray-800 text-white p-4 sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">Rio Setiawan</h1>
-      <nav>
-        <a href="index.html" class="hover:text-gray-400">Home</a>
-      </nav>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+  <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+      <!-- Top Navigation Bar -->
+      <header
+        class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="bg-primary p-1.5 rounded-lg">
+                <span class="material-symbols-outlined text-white text-xl">terminal</span>
+              </div>
+              <span class="text-xl font-extrabold tracking-tight text-primary dark:text-white">Rio Setiawan</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+              <a class="text-sm font-medium hover:text-primary transition-colors" data-i18n="nav_skills"
+                href="index.html#skills">Skills</a>
+              <a class="text-sm font-medium text-primary border-b-2 border-primary" data-i18n="nav_portfolio"
+                href="index.html#portfolio">Portfolio</a>
+              <a class="text-sm font-medium hover:text-primary transition-colors" data-i18n="nav_experience"
+                href="index.html#experience">Experience</a>
+              <a class="text-sm font-medium hover:text-primary transition-colors" data-i18n="nav_education"
+                href="index.html#education">Education</a>
+            </nav>
+            <div class="flex items-center gap-4">
+              <div class="hidden md:flex items-center gap-2 bg-slate-200/50 dark:bg-slate-800/50 rounded-lg p-1">
+                <button id="lang-id" onclick="setLanguage('id')"
+                  class="lang-btn px-2 py-1 text-xs rounded-md transition-all text-slate-400">ID</button>
+                <button id="lang-en" onclick="setLanguage('en')"
+                  class="lang-btn px-2 py-1 text-xs rounded-md transition-all text-slate-400">EN</button>
+              </div>
+              <button onclick="toggleTheme()"
+                class="flex items-center justify-center size-9 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+                <span class="material-symbols-outlined theme-icon text-lg">dark_mode</span>
+              </button>
+              <a href="CV Rio Setiawan.pdf" target="_blank" download data-i18n="btn_download_cv"
+                class="hidden sm:flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                Download CV
+              </a>
+              <div class="h-10 w-10 rounded-full bg-slate-200 overflow-hidden border-2 border-primary/20">
+                <img alt="Professional headshot of Rio Setiawan" class="h-full w-full object-contain bg-white"
+                  src="images/Pas Foto 41.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="flex flex-1 justify-center py-10 px-6 lg:px-40">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          <!-- Hero Section -->
+          <div class="flex flex-col gap-6 mb-10">
+            <div class="flex flex-col gap-3">
+              <a href="index.html#portfolio"
+                class="text-primary text-sm font-bold tracking-wider hover:underline flex items-center gap-1 mb-2">
+                <span class="material-symbols-outlined text-sm">arrow_back</span> <span
+                  data-i18n="btn_back_portfolio">Back to Portfolio</span>
+              </a>
+              <p class="text-primary text-sm font-bold uppercase tracking-wider" data-i18n="project_featured">Featured
+                Project</p>
+              <h1 class="text-slate-900 dark:text-slate-100 text-5xl font-black leading-tight tracking-tight"
+                data-i18n="port1_title">Website
+                Berita Sepakbola</h1>
+              <p class="text-slate-600 dark:text-slate-400 text-xl font-normal leading-relaxed max-w-3xl"
+                data-i18n="port1_desc">
+                Ini adalah website berita sepakbola yang dibangun menggunakan PHP native dan database MySQL. Website ini
+                menyediakan berita terbaru seputar dunia sepakbola.
+              </p>
+            </div>
+            <div class="flex gap-3 flex-wrap">
+              <div class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
+                <span class="material-symbols-outlined text-sm text-primary">code</span>
+                <p class="text-primary text-sm font-semibold">PHP Native</p>
+              </div>
+              <div class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
+                <span class="material-symbols-outlined text-sm text-primary">database</span>
+                <p class="text-primary text-sm font-semibold">MySQL</p>
+              </div>
+            </div>
+          </div>
+          <!-- Project Showcase Image -->
+          <div class="@container w-full mb-12">
+            <div
+              class="overflow-hidden rounded-xl border border-primary/10 bg-white dark:bg-slate-800 shadow-xl shadow-primary/5 relative">
+              <div id="carousel-inner" class="w-full flex transition-transform duration-500 ease-in-out">
+                <div class="w-full shrink-0 bg-top bg-no-repeat bg-cover min-h-[480px]"
+                  style='background-image: url("images/portfolio1/home.png");'></div>
+                <div class="w-full shrink-0 bg-top bg-no-repeat bg-cover min-h-[480px]"
+                  style='background-image: url("images/portfolio1/admin.png");'></div>
+                <div class="w-full shrink-0 bg-top bg-no-repeat bg-cover min-h-[480px]"
+                  style='background-image: url("images/portfolio1/forum.png");'></div>
+                <div class="w-full shrink-0 bg-top bg-no-repeat bg-cover min-h-[480px]"
+                  style='background-image: url("images/portfolio1/kompetisi.png");'></div>
+              </div>
+              <button onclick="prevSlide()"
+                class="absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center size-12 rounded-full bg-white/20 dark:bg-slate-900/20 backdrop-blur-md border border-white/30 text-primary hover:bg-white/40 transition-all shadow-lg group z-10">
+                <span class="material-symbols-outlined font-bold">chevron_left</span>
+              </button>
+              <button onclick="nextSlide()"
+                class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center size-12 rounded-full bg-white/20 dark:bg-slate-900/20 backdrop-blur-md border border-white/30 text-primary hover:bg-white/40 transition-all shadow-lg group z-10">
+                <span class="material-symbols-outlined font-bold">chevron_right</span>
+              </button>
+              <div id="carousel-indicators"
+                class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5 items-center bg-white/10 dark:bg-slate-900/10 backdrop-blur-sm px-4 py-2 rounded-full z-10">
+                <div class="size-2.5 rounded-full bg-primary cursor-pointer" onclick="goToSlide(0)"></div>
+                <div class="size-2 rounded-full bg-primary/30 cursor-pointer" onclick="goToSlide(1)"></div>
+                <div class="size-2 rounded-full bg-primary/30 cursor-pointer" onclick="goToSlide(2)"></div>
+                <div class="size-2 rounded-full bg-primary/30 cursor-pointer" onclick="goToSlide(3)"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Content Sections Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Main Content Column -->
+            <div class="lg:col-span-2 flex flex-col gap-10">
+              <!-- Project Overview -->
+              <section>
+                <h2
+                  class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">info</span>
+                  <span data-i18n="project_overview">Project Overview</span>
+                </h2>
+                <div class="text-slate-600 dark:text-slate-400 text-base leading-relaxed space-y-4">
+                  <p data-i18n="port1_overview_1">
+                    Ini adalah website berita sepakbola yang dibangun menggunakan PHP native dan database MySQL. Website
+                    ini menyediakan berita terbaru seputar dunia sepakbola.
+                  </p>
+                  <p data-i18n="port1_overview_2">
+                    Sistem ini didesain agar ringan namun memiliki fungsionalitas utama yang dibutuhkan oleh portal
+                    berita olahraga untuk mengelola dan merepresentasikan data dalam volume besar secara efisien.
+                  </p>
+                </div>
+              </section>
+              <!-- Key Features -->
+              <section>
+                <h2
+                  class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight mb-6 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">list_alt</span>
+                  <span data-i18n="project_features">Key Features</span>
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
+                    <div class="size-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-primary">article</span>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port1_feat1_title">Halaman
+                        Berita</h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port1_feat1_desc">Menampilkan
+                        berita terbaru dengan navigasi
+                        yang intuitif.</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
+                    <div class="size-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-primary">event</span>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port1_feat2_title">Jadwal
+                        Pertandingan</h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port1_feat2_desc">Informasi
+                        jadwal pertandingan terupdate dari
+                        bebagai liga.</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
+                    <div class="size-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-primary">sports_score</span>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port1_feat3_title">Hasil
+                        Pertandingan</h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port1_feat3_desc">Menyediakan
+                        hasil atau skor akhir
+                        pertandingan yang baru selesai.</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
+                    <div class="size-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-primary">admin_panel_settings</span>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port1_feat4_title">Admin
+                        Dashboard</h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port1_feat4_desc">Panel admin
+                        handal untuk menambah dan
+                        mengubah konten.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- Sidebar / Tech Stack -->
+            <div class="flex flex-col gap-8">
+              <div class="p-6 rounded-xl bg-primary/5 border border-primary/10">
+                <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-6 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">stack</span>
+                  <span data-i18n="project_stack">Technical Stack</span>
+                </h3>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3">
+                    <div class="size-8 rounded bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm">
+                      <span class="material-symbols-outlined text-primary">terminal</span>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-slate-900 dark:text-slate-100">PHP Native</p>
+                      <p class="text-xs text-slate-500">Core Engine</p>
+                    </div>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div class="size-8 rounded bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm">
+                      <span class="material-symbols-outlined text-primary">storage</span>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-slate-900 dark:text-slate-100">MySQL</p>
+                      <p class="text-xs text-slate-500">Database Layer</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="p-6 rounded-xl border border-primary/10">
+                <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4" data-i18n="project_stats">Project
+                  Stats</h3>
+                <div class="space-y-3">
+                  <div class="flex justify-between items-center py-2 border-b border-primary/5">
+                    <span class="text-slate-500" data-i18n="project_type">Type</span>
+                    <span class="font-medium">Web Portal</span>
+                  </div>
+                  <div class="flex justify-between items-center py-2 border-b border-primary/5">
+                    <span class="text-slate-500" data-i18n="project_status">Status</span>
+                    <span
+                      class="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-green-100 text-green-700 uppercase"
+                      data-i18n="port1_status_completed">Completed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- Footer Section -->
+      <footer class="bg-slate-900 text-white pt-20 pb-10 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-3 gap-12 mb-16">
+            <div class="space-y-6">
+              <div class="flex items-center gap-2">
+                <div class="bg-primary p-1.5 rounded-lg">
+                  <span class="material-symbols-outlined text-white text-xl">terminal</span>
+                </div>
+                <span class="text-2xl font-black tracking-tight">Rio Setiawan</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed" data-i18n="footer_desc">
+                Crafting innovative digital solutions with passion and precision. Let's build something amazing
+                together.
+              </p>
+              <div class="flex gap-4">
+                <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                  href="https://www.facebook.com/riosetiawan97" target="_blank">
+                  <i class="fa fa-facebook text-xl text-white"></i>
+                </a>
+                <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                  href="https://www.instagram.com/riosetiawan97/" target="_blank">
+                  <i class="fa fa-instagram text-xl text-white"></i>
+                </a>
+                <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                  href="https://github.com/riosetiawan97" target="_blank">
+                  <i class="fa fa-github text-xl text-white"></i>
+                </a>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <h4 class="text-lg font-bold" data-i18n="footer_contact">Contact Info</h4>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3 text-slate-400">
+                  <span class="material-symbols-outlined text-primary">location_on</span>
+                  <span>Jalan Padat Karya No. 77, Pondok Kelapa, Jakarta Timur, Jakarta, Indonesia 13450</span>
+                </li>
+                <li class="flex items-start gap-3 text-slate-400">
+                  <span class="material-symbols-outlined text-primary">call</span>
+                  <span>085891217032</span>
+                </li>
+                <li class="flex items-start gap-3 text-slate-400">
+                  <span class="material-symbols-outlined text-primary">mail</span>
+                  <span>riosetiawan1997@gmail.com</span>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-6">
+              <h4 class="text-lg font-bold" data-i18n="footer_links">Quick Links</h4>
+              <div class="grid grid-cols-2 gap-4">
+                <a class="text-slate-400 hover:text-white transition-colors" data-i18n="nav_skills"
+                  href="index.html#skills">Skills</a>
+                <a class="text-slate-400 hover:text-white transition-colors" data-i18n="nav_portfolio"
+                  href="index.html#portfolio">Portfolio</a>
+                <a class="text-slate-400 hover:text-white transition-colors" data-i18n="nav_experience"
+                  href="index.html#experience">Experience</a>
+                <a class="text-slate-400 hover:text-white transition-colors" data-i18n="nav_education"
+                  href="index.html#education">Education</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm">
+            <p data-i18n="footer_copyright">© 2024 Rio Setiawan. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
-  </header>
+  </div>
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('#carousel-inner > div');
+    const inner = document.getElementById('carousel-inner');
+    const indicators = document.querySelectorAll('#carousel-indicators > div');
 
-  <main class="container mx-auto py-16">
-    <div class="bg-white p-8 rounded-lg shadow-md">
-      <h2 class="text-3xl font-bold mb-4">Website Berita Sepakbola</h2>
-      <img src="images/portfolio1/home.png" class="w-full h-auto object-cover rounded-lg mb-6" alt="Website Berita Sepakbola">
-      <div class="text-gray-700">
-        <p class="mb-4">Ini adalah website berita sepakbola yang dibangun menggunakan PHP native dan database MySQL. Website ini menyediakan berita terbaru seputar dunia sepakbola.</p>
-        <p class="mb-4">Fitur utama termasuk halaman berita, jadwal pertandingan, dan hasil pertandingan.</p>
-      </div>
-    </div>
-  </main>
+    function updateCarousel() {
+      inner.style.transform = `translateX(-${currentSlide * 100}%)`;
+      indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+          indicator.className = 'size-2.5 rounded-full bg-primary cursor-pointer';
+        } else {
+          indicator.className = 'size-2 rounded-full bg-primary/30 cursor-pointer';
+        }
+      });
+    }
 
-  <footer class="bg-gray-800 text-white py-8">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 Rio Setiawan. All rights reserved.</p>
-    </div>
-  </footer>
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    }
 
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+  </script>
+  <script src="js/lang.js"></script>
 </body>
+
 </html>
