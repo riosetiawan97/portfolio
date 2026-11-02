@@ -143,7 +143,22 @@ const translations = {
         "port4_feat3_title": "Gallery",
         "port4_feat3_desc": "A collection of photos and documentation of student learning activities.",
         "port4_feat4_title": "Contact Information",
-        "port4_feat4_desc": "Providing a direct means of communication with the school."
+        "port4_feat4_desc": "Providing a direct means of communication with the school.",
+
+        // Portfolio 5
+        "port5_title": "Library Management System",
+        "port5_desc": "A multi-tenant library platform for web and mobile: anyone can register their own library with its own catalog, members, circulation, and fines.",
+        "port5_overview_1": "This project started as a simple CodeIgniter library website. It was rebuilt from scratch with Next.js, TypeScript, and PostgreSQL so it works on both web and mobile.",
+        "port5_overview_2": "It is now a platform: every library has its own catalog, staff, members, and lending rules, with data isolated from other libraries.",
+        "port5_feat1_title": "Multi-library",
+        "port5_feat1_desc": "Anyone can register a library; each library's data is kept separate.",
+        "port5_feat2_title": "Book Catalog",
+        "port5_feat2_desc": "Search by title, author, or ISBN, with category and availability filters.",
+        "port5_feat3_title": "Circulation & Fines",
+        "port5_feat3_desc": "Lending, returns, and automatic late fines.",
+        "port5_feat4_title": "Web & Mobile (PWA)",
+        "port5_feat4_desc": "Responsive and installable on a phone's home screen.",
+        "btn_view_source": "Source Code"
     },
     id: {
         "nav_skills": "Keahlian",
@@ -289,7 +304,22 @@ const translations = {
         "port4_feat3_title": "Galeri",
         "port4_feat3_desc": "Kumpulan foto dan dokumentasi kegiatan pembelajaran siswa.",
         "port4_feat4_title": "Informasi Kontak",
-        "port4_feat4_desc": "Menyediakan sarana komunikasi dengan pihak sekolah langsung."
+        "port4_feat4_desc": "Menyediakan sarana komunikasi dengan pihak sekolah langsung.",
+
+        // Portfolio 5
+        "port5_title": "Sistem Informasi Perpustakaan",
+        "port5_desc": "Platform perpustakaan multi-tenant untuk web dan mobile: siapa saja bisa mendaftarkan perpustakaannya sendiri, lengkap dengan katalog, keanggotaan, sirkulasi, dan denda.",
+        "port5_overview_1": "Awalnya proyek ini adalah website perpustakaan sederhana berbasis CodeIgniter. Kemudian dibangun ulang dari nol dengan Next.js, TypeScript, dan PostgreSQL agar bisa dipakai di web maupun ponsel.",
+        "port5_overview_2": "Sekarang aplikasi ini berupa platform: setiap perpustakaan punya katalog, petugas, anggota, dan aturan peminjamannya sendiri, dengan data yang terisolasi satu sama lain.",
+        "port5_feat1_title": "Multi-perpustakaan",
+        "port5_feat1_desc": "Siapa saja bisa mendaftarkan perpustakaan; data tiap perpustakaan terpisah.",
+        "port5_feat2_title": "Katalog Buku",
+        "port5_feat2_desc": "Pencarian judul, penulis, ISBN, filter kategori dan ketersediaan.",
+        "port5_feat3_title": "Sirkulasi & Denda",
+        "port5_feat3_desc": "Peminjaman, pengembalian, dan denda keterlambatan otomatis.",
+        "port5_feat4_title": "Web & Mobile (PWA)",
+        "port5_feat4_desc": "Responsif dan bisa di-install ke layar utama ponsel.",
+        "btn_view_source": "Kode Sumber"
     }
 };
 
