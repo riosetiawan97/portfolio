@@ -31,7 +31,7 @@
     }
   </script>
   <script src="js/theme.js"></script>
-  <title>Project Detail - Website Profile Sekolah SMP Alhadiriyah</title>
+  <title>Project Detail - Website Profile Sekolah SMP Islam Al-Hadiriyah</title>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
@@ -94,22 +94,24 @@
               <p class="text-primary text-sm font-bold uppercase tracking-wider" data-i18n="project_featured">Featured
                 Project</p>
               <h1 class="text-slate-900 dark:text-slate-100 text-5xl font-black leading-tight tracking-tight"
-                data-i18n="port4_title">Website
-                Profile Sekolah SMP Alhadiriyah</h1>
+                data-i18n="port4_title">Website Profile Sekolah SMP Islam Al-Hadiriyah</h1>
               <p class="text-slate-600 dark:text-slate-400 text-xl font-normal leading-relaxed max-w-3xl"
                 data-i18n="port4_desc">
-                Ini adalah website profil sekolah untuk SMP Alhadiriyah. Tujuannya adalah untuk menyediakan informasi
-                tentang sekolah kepada siswa, orang tua, dan masyarakat umum.
+                Website profil sekolah dengan panel admin lengkap, pendaftaran PPDB online, dan absensi siswa. Sudah online di Vercel.
               </p>
             </div>
             <div class="flex gap-3 flex-wrap">
               <div class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
                 <span class="material-symbols-outlined text-sm text-primary">code</span>
-                <p class="text-primary text-sm font-semibold">PHP Native</p>
+                <p class="text-primary text-sm font-semibold">CodeIgniter 3</p>
               </div>
               <div class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
                 <span class="material-symbols-outlined text-sm text-primary">database</span>
                 <p class="text-primary text-sm font-semibold">MySQL</p>
+              </div>
+              <div class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-primary/10 px-4">
+                <span class="material-symbols-outlined text-sm text-primary">cloud</span>
+                <p class="text-primary text-sm font-semibold">Vercel</p>
               </div>
             </div>
           </div>
@@ -119,13 +121,13 @@
               class="overflow-hidden rounded-xl border border-primary/10 bg-white dark:bg-slate-800 shadow-xl shadow-primary/5 relative">
               <div id="carousel-inner" class="w-full flex transition-transform duration-500 ease-in-out">
                 <div class="w-full shrink-0 bg-top bg-no-repeat bg-cover min-h-[480px]"
-                  style='background-image: url("images/portfolio1/home.png");'></div>
+                  style='background-image: url("images/portfolio4/home.png");'></div>
                 <div class="w-full shrink-0 bg-top bg-no-repeat bg-cover min-h-[480px]"
-                  style='background-image: url("images/portfolio1/admin.png");'></div>
+                  style='background-image: url("images/portfolio4/berita.png");'></div>
                 <div class="w-full shrink-0 bg-top bg-no-repeat bg-cover min-h-[480px]"
-                  style='background-image: url("images/portfolio1/forum.png");'></div>
+                  style='background-image: url("images/portfolio4/galeri.png");'></div>
                 <div class="w-full shrink-0 bg-top bg-no-repeat bg-cover min-h-[480px]"
-                  style='background-image: url("images/portfolio1/kompetisi.png");'></div>
+                  style='background-image: url("images/portfolio4/admin.png");'></div>
               </div>
               <button onclick="prevSlide()"
                 class="absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center size-12 rounded-full bg-white/20 dark:bg-slate-900/20 backdrop-blur-md border border-white/30 text-primary hover:bg-white/40 transition-all shadow-lg group z-10">
@@ -157,12 +159,10 @@
                 </h2>
                 <div class="text-slate-600 dark:text-slate-400 text-base leading-relaxed space-y-4">
                   <p data-i18n="port4_overview_1">
-                    Ini adalah website profil sekolah untuk SMP Alhadiriyah. Website ini dibangun menggunakan PHP native
-                    dan database MySQL.
+                    Website profil SMP Islam Al-Hadiriyah, Duren Sawit, Jakarta Timur. Dibangun dengan CodeIgniter 3 (PHP 8.3) dan MySQL, lalu dipindahkan ke Vercel dengan database MySQL di Aiven Cloud.
                   </p>
                   <p data-i18n="port4_overview_2">
-                    Sistem ini dikhususkan agar para orang tua murid serta calon pendaftar bisa mendapatkan informasi
-                    terpercaya yang langsung disajikan oleh pihak sekolah.
+                    Pihak sekolah mengelola seluruh isi website sendiri lewat panel admin: berita, agenda, galeri, FAQ, PPDB, data guru dan siswa, sampai pengaturan website. Foto dan file yang diunggah disimpan di Vercel Blob agar tidak hilang saat deploy ulang.
                   </p>
                 </div>
               </section>
@@ -176,26 +176,29 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
                     <div class="size-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <span class="material-symbols-outlined text-primary">school</span>
+                      <span class="material-symbols-outlined text-primary">dashboard</span>
                     </div>
                     <div>
-                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port4_feat1_title">Profil
-                        Sekolah</h3>
-                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port4_feat1_desc">Menyediakan
-                        sejarah, visi, misi dan
-                        kurikulum sekolah.</p>
+                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port4_feat1_title">Panel Admin (CMS)</h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port4_feat1_desc">Kelola berita, agenda, galeri, FAQ, pengumuman, dan pengaturan website tanpa menyentuh kode.</p>
                     </div>
                   </div>
                   <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
                     <div class="size-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <span class="material-symbols-outlined text-primary">article</span>
+                      <span class="material-symbols-outlined text-primary">how_to_reg</span>
                     </div>
                     <div>
-                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port4_feat2_title">Berita dan
-                        Acara</h3>
-                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port4_feat2_desc">Informasi
-                        terbaru seputar kegiatan yang
-                        berjalan di sekolah.</p>
+                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port4_feat2_title">PPDB Online</h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port4_feat2_desc">Alur pendaftaran, brosur, dan formulir pendaftaran calon siswa baru.</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
+                    <div class="size-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-primary">fact_check</span>
+                    </div>
+                    <div>
+                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port4_feat3_title">Absensi Guru & Siswa</h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port4_feat3_desc">Pencatatan kehadiran harian dengan rekap per rentang tanggal di admin.</p>
                     </div>
                   </div>
                   <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
@@ -203,22 +206,8 @@
                       <span class="material-symbols-outlined text-primary">photo_library</span>
                     </div>
                     <div>
-                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port4_feat3_title">Galeri</h3>
-                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port4_feat3_desc">Kumpulan foto
-                        dan dokumentasi kegiatan
-                        pembelajaran siswa.</p>
-                    </div>
-                  </div>
-                  <div class="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800 border border-primary/5">
-                    <div class="size-10 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <span class="material-symbols-outlined text-primary">contact_phone</span>
-                    </div>
-                    <div>
-                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port4_feat4_title">Informasi
-                        Kontak</h3>
-                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port4_feat4_desc">Menyediakan
-                        sarana komunikasi dengan pihak
-                        sekolah langsung.</p>
+                      <h3 class="font-bold text-slate-900 dark:text-slate-100" data-i18n="port4_feat4_title">Berita & Galeri</h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="port4_feat4_desc">Artikel berkategori dengan komentar, serta album foto kegiatan sekolah.</p>
                     </div>
                   </div>
                 </div>
@@ -237,8 +226,8 @@
                       <span class="material-symbols-outlined text-primary">terminal</span>
                     </div>
                     <div>
-                      <p class="font-semibold text-slate-900 dark:text-slate-100">PHP Native</p>
-                      <p class="text-xs text-slate-500">Core Engine</p>
+                      <p class="font-semibold text-slate-900 dark:text-slate-100">CodeIgniter 3</p>
+                      <p class="text-xs text-slate-500">Framework PHP 8.3</p>
                     </div>
                   </li>
                   <li class="flex items-center gap-3">
@@ -247,7 +236,25 @@
                     </div>
                     <div>
                       <p class="font-semibold text-slate-900 dark:text-slate-100">MySQL</p>
-                      <p class="text-xs text-slate-500">Database Layer</p>
+                      <p class="text-xs text-slate-500">Database (Aiven Cloud)</p>
+                    </div>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div class="size-8 rounded bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm">
+                      <span class="material-symbols-outlined text-primary">cloud</span>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-slate-900 dark:text-slate-100">Vercel</p>
+                      <p class="text-xs text-slate-500">Hosting & File Storage (Blob)</p>
+                    </div>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div class="size-8 rounded bg-white dark:bg-slate-700 flex items-center justify-center shadow-sm">
+                      <span class="material-symbols-outlined text-primary">web</span>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-slate-900 dark:text-slate-100">Bootstrap 5</p>
+                      <p class="text-xs text-slate-500">UI (Metronic) & jQuery</p>
                     </div>
                   </li>
                 </ul>
@@ -258,7 +265,7 @@
                 <div class="space-y-3">
                   <div class="flex justify-between items-center py-2 border-b border-primary/5">
                     <span class="text-slate-500" data-i18n="project_type">Type</span>
-                    <span class="font-medium">Web Profile</span>
+                    <span class="font-medium">Web Profile & CMS</span>
                   </div>
                   <div class="flex justify-between items-center py-2 border-b border-primary/5">
                     <span class="text-slate-500" data-i18n="project_status">Status</span>
@@ -266,10 +273,15 @@
                       class="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-green-100 text-green-700 uppercase">Live</span>
                   </div>
                 </div>
-                <a href="http://smpalhadiriyah.sch.id/" target="_blank"
+                <a href="https://sekolah2-riosetiawan97s-projects.vercel.app/" target="_blank"
                   class="w-full mt-6 flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">
                   <span class="material-symbols-outlined">launch</span>
                   <span data-i18n="btn_visit_site">Visit Live Site</span>
+                </a>
+                <a href="https://github.com/riosetiawan97/sekolah2" target="_blank"
+                  class="w-full mt-3 flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 dark:bg-white/10 text-white font-bold hover:bg-slate-700 transition-all">
+                  <i class="fa fa-github text-lg"></i>
+                  <span data-i18n="btn_view_source">Source Code</span>
                 </a>
               </div>
             </div>
